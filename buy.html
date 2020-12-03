@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  
+ <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="mystyle2.css">
+  <script>
+    function myFunction() {
+    
+    var i;
+    var x = document.getElementById("select").selectedIndex;
+    var y = document.getElementById("select").options;
+    var a = document.getElementById("timeSlot").selectedIndex;
+    var b = document.getElementById("timeSlot").options;
+    var c = document.getElementById("playerName").value;
+
+    if(c==""||x==0||a==0)
+    {
+      alert("Please fill all the values");
+      
+    }
+   else
+   {
+    document.getElementById("nameOfPlayer").innerHTML= c;
+
+    document.getElementById("costForGame").innerHTML= "$25";
+
+    for(i = 1;i < 8;i++)
+    {
+      if(y[x].index == i)
+    {
+      document.getElementById("noOfPlayers").innerHTML= y[x].text;
+      
+    }
+    }
+
+    if(y[x].index == 1)
+    {
+      document.getElementById("pricePlayers").innerHTML= "$2";
+      var z = 2;
+    }
+    if(y[x].index == 2)
+    {
+      document.getElementById("pricePlayers").innerHTML= "$3";
+      var z = 3;
+    }
+    if(y[x].index == 3)
+    {
+      document.getElementById("pricePlayers").innerHTML= "$4";
+      var z = 4;
+    }
+    if(y[x].index == 4)
+    {
+      document.getElementById("pricePlayers").innerHTML= "$6";
+      var z = 6;
+    }
+    if(y[x].index == 5)
+    {
+      document.getElementById("pricePlayers").innerHTML= "$7";
+      var z = 7;
+    }
+    if(y[x].index == 6)
+    {
+      document.getElementById("pricePlayers").innerHTML= "$8";
+      var z = 8;
+    }
+    if(y[x].index == 7)
+    {
+      document.getElementById("pricePlayers").innerHTML= "$10";
+      var z = 10;
+    }
+
+    for(i = 1;i < 24;i++)
+    {
+      if(b[a].index == i)
+    {
+      document.getElementById("printSlot").innerHTML= b[a].text;
+      
+    }
+    }
+
+    var total = 25 + z;
+    document.getElementById("total").innerHTML= "$" + total;
+   }
+    
+  }
+
+  function done(){
+    document.getElementById("para").innerHTML="HAPPY GAMING!!";
+  }
+
+
+  </script>
+
+
+
+</head>
+
+<body>
+  <a href="games.html"><button class="btnUp">Go Back Home </button></a>
+
+  <div class="coupon" >
+    <div class="container">
+      <h3>Company Logo</h3>
+      <img src="t1.jpeg" style="height:50px; width:70px;">
+    </div>
+    
+    <div class="container" style="background-color:white">
+      <h2><b>YOU GET THE GAME FOR ONLY $25</b></h2>
+    
+    </div>
+    <div class="container">
+      
+      <p class="expire">Expires: Jan 10, 2021</p>
+    </div>
+  </div>
+    <div class="content">
+        <h2>Booking</h2>
+        
+        <div class="row">
+          <div class="col-75">
+            <div class="container">
+            
+                    <p>The form will validate your inputs. Please be sure while filling it.</p>
+                    <label for="pname"> Player's Name</label><br>
+
+                    
+                    <input type="text" id="playerName" placeholder="PLAYER_XYZ"><br><br>
+                    
+                    <label for="number"> Number of player(s)</label><br>
+                    <select id="select">
+                    <option>--SELECT--</option>
+            <option>1 Player</option>
+            <option>2 Players</option>
+            <option>3 Players</option>
+            <option>4 Players</option>
+            <option>5 Players</option>
+            <option>6 Players</option>
+            <option>7 Players &amp; more</option>
+            </select>
+            <br>
+                    <br><br>
+                    <label for="time">Time-Slot</label><br>
+                    <select id="timeSlot">
+                   <option>--SELECT--</option>
+                    <option>00:00  to  01:00</option>
+                    <option>01:00  to  02:00</option>
+                    <option>02:00  to  03:00</option>
+                    <option>03:00  to  04:00</option>
+                    <option>04:00  to  05:00</option>
+                    <option>05:00  to  06:00</option>
+                    <option>06:00  to  07:00</option>
+                    <option>07:00  to  08:00</option>
+                    <option>08:00  to  09:00</option>
+                    <option>09:00  to  10:00</option>
+                    <option>10:00  to  11:00</option>
+                    <option>11:00  to  12:00</option>
+                    <option>12:00  to  13:00</option>
+                    <option>13:00  to  14:00</option>
+                    <option>14:00  to  15:00</option>
+                    <option>15:00  to  16:00</option>
+                    <option>16:00  to  17:00</option>
+                    <option>17:00  to  18:00</option>
+                    <option>18:00  to  19:00</option>
+                    <option>19:00  to  20:00</option>
+                    <option>20:00  to  21:00</option>
+                    <option>21:00  to  22:00</option>
+                    <option>22:00  to  23:00</option>
+                    </select>
+                    
+                        </div>
+                    
+                    </div>
+                  </div>
+                  
+                
+                <label>
+                  
+                    <button type="button" class="btn" onclick="myFunction()">Continue to Checkout</button>
+            
+          
+          <div class="col-25">
+            <div class="container">
+             <h2>Receipt</h2>
+             <p>Name of the Player<span class="price" id="nameOfPlayer"></span></p>
+             <p>Cost for the Game<span class="price" id="costForGame"></span></p>
+             <p>Number of Players<span class="price" id="noOfPlayers"></span></p>
+             <p>Cost for the respective number of Players<span class="price" id="pricePlayers"></span></p>
+             <p>Time slot<span class="price" id="printSlot"></span></p>
+              
+              <hr>
+              <p>Total <span class="price"  style="color:black" ><b id="total"></b></span></p>
+            </div>
+          </div>
+          <button type="button" class="btn" onclick="done()" >Done</button>
+          <h2 id="para"></h2>
+        
+        
+        
+        
+        </label>
+            </div>
+</body>
+
+</html>
